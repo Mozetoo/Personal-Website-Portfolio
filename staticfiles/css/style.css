@@ -1,0 +1,383 @@
+.navbar {
+    pointer-events: none; /* Disable pointer events on the navbar itself */
+}
+
+.navbar-toggler {
+    pointer-events: auto; /* Re-enable pointer events on the navbar toggler button */
+}
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-color: #f8f9fa;
+
+}/* Just for visualization purposes */
+
+.layout-image {
+  width: 200px; /* Adjust the size as needed */
+  height: 200px; /* Adjust the size as needed */
+  object-fit: cover;
+}
+.about-page {
+    background-color: yellowgreen;
+    height: 80vh;
+
+}
+.competency-page {
+    background-color: #f8f9fa;
+}
+.competency-icon{
+    max-width: 30px;
+    max-height: 30px;
+}
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+.fa-microchip {
+    margin-right: 8px;
+}
+
+.border-0 {
+    border: none !important;
+}
+.portfolio-page {
+    background-color: yellowgreen;
+}
+.portfolio-card {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card {
+    height: 300px; /* Set the desired height for the cards */
+}
+.services-page{
+    background-color: #f8f9fa;
+}
+
+.site-footer{
+    background-color: black;
+}
+.footer-icon {
+    color: white;
+    font-size: 2em;
+}
+body {
+    padding-top: 56px; /* Height of the fixed navbar */
+}
+
+.contact-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.contact-section h2 {
+    color: #333;
+}
+
+#contact-form .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+#contact-form .form-control {
+    border-radius: 0;
+}
+
+#contact-form textarea.form-control {
+    resize: vertical;
+}
+
+
+
+
+
+  #title {
+    color: transparent;
+    font-size: 4rem;
+    animation: revealText 2s linear forwards;
+  }
+  
+  @keyframes revealText {
+    0% {
+      color: transparent;
+    }
+    100% {
+      color: white;
+    }
+  }
+
+.custom-icon {
+    color: transparent;
+    stroke: red;
+    stroke-width: 2px;
+}
+.Lilita {
+    font-family: 'PT Serif', serif;
+}
+.hero-section {
+
+}
+.landing-text {
+    height: 200px;
+    width: 800px;
+
+}
+.landing-text1 {
+    height: 150px;
+    width: 800px;
+
+
+}
+
+.personal {
+    font-size: 10em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;/* Optional: change the text color */
+}
+.personal1 {
+    font-size: 6em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Optional: change the text color */
+}
+.landing-button {
+    height: 70px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing-text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text {
+    font-size: 10em;
+}
+
+.sub-text {
+    font-size: 9em;
+}
+
+@media (max-width: 1919.98px) {
+    .intro-text {
+        font-size: 8em;
+    }
+
+    .sub-text {
+        font-size: 7em;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .intro-text {
+        font-size: 6em;
+    }
+
+    .sub-text {
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .intro-text {
+        font-size: 4em;
+    }
+
+    .sub-text {
+        font-size: 3em;
+    }
+}
+
+.landing-text {
+    height: 200px;
+    width: 800px;
+
+}
+.landing-text1 {
+    height: 150px;
+    width: 800px;
+
+
+}
+
+
+.list-group.list-group-flush .list-group-item {
+    border: none;
+}
+.list-group.list-group-flush .list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+}
+
+.list-item-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Adjust the aspect ratio for your desired height/width ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    padding-bottom: 75%; /* Adjust for smaller screens */
+  }
+}
+
+.landing-text {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-text {
+    font-size: 10em;
+}
+
+.sub-text {
+    font-size: 9em;
+}
+
+@media (max-width: 1919.98px) {
+    .intro-text {
+        font-size: 8em;
+    }
+
+    .sub-text {
+        font-size: 7em;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .intro-text {
+        font-size: 6em;
+    }
+
+    .sub-text {
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .intro-text {
+        font-size: 4em;
+    }
+
+    .sub-text {
+        font-size: 3em;
+    }
+}
+header.masthead {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-top: calc(8rem + 57px);
+    padding-bottom: 8rem;
+    background-size: cover;
+}
+
+header.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212529;
+    opacity: 0.5;
+}
+header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+    color: #fff;
+}
+header.masthead .page-heading,
+header.masthead .site-heading {
+    text-align: center;
+}
+header.masthead .page-heading h1, header.masthead .page-heading .h1,
+header.masthead .site-heading h1,
+header.masthead .site-heading .h1 {
+    font-size: 3rem;
+}
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin-top: 0.625rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+    font-size: 2.25rem;
+}
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+    line-height: 1.1;
+    display: block;
+}
+header.masthead .post-heading .subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.75rem 0 2rem;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .post-heading .meta {
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .post-heading .meta a {
+    color: #fff;
+}
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: 12.5rem;
+        padding-bottom: 12.5rem;
+    }
+    header.masthead .page-heading h1, header.masthead .page-heading .h1,
+    header.masthead .site-heading h1,
+    header.masthead .site-heading .h1 {
+        font-size: 5rem;
+    }
+    header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+        font-size: 3.5rem;
+    }
+    header.masthead .post-heading .subheading {
+        font-size: 1.875rem;
+    }
+}

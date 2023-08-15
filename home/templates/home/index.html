@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo/logo.png" type="image/x-icon">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/libs/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script defer src="{% static 'js/lib/all.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarText" data-bs-offset="50">
+    <header id="page-hero" class="site-header d-flex flex-column align-content-between">
+        <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand ms-3">Moses Sampson</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-item nav-link active" aria-current="page" href="#page-hero">Home</a>
+                        <a class="nav-item nav-link" href="#about-time">About</a>
+                        <a class="nav-item nav-link" href="#competency-page">Competency</a>
+                        <a class="nav-item nav-link" href="#portfolio-page">Portfolio</a>
+                        <a class="nav-item nav-link" href="#services-page">Services</a>
+                        <a class="nav-item nav-link" href="#contact-section">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+            {% for home in homes %}
+        <section id="page-heroo">
+                <div class="landing-page">
+                    <div class="landing-text">
+                        <h1 class="intro-text">{{ home.first_text }}</h1>
+                    </div>
+                    <div class="landing-text">
+                        <h2 class="sub-text">{{ home.second_text }}</h2>
+                    </div>
+                    <div class="landing-button mt-3">
+                        <button type="button" class="btn btn-outline-success">View</button>
+                    </div>
+                </div>
+        </section>
+                    {% endfor %}
+
+    </header>
+    <article id="about-time" class="about-page my-0 pb-5">
+        <section class="col-sm-9 col-md-5 col-lg-12 text-center text-lg-left">
+            <div class="row align-items-center justify-content-center pt-5">
+                {% for about in abouts %}
+                <div class="col-lg-2 col-md-2 text-lg-right m-0 m-md-5">
+                    <img class="layout-image img-circle img-fluid rounded-circle shadow-lg" src="{{ about.about_image }}" alt="Photo placeholder">
+                </div>
+                <div class="col-lg-6 col-md-6 m-2">
+                    <h2 class="layout-title pt-3">About</h2>
+                    <p class="layout-text">
+                        {{ about.about_text|linebreaksbr }}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </article>
+
+    <article id="competency-page" class="competency-page">
+        <section class="mb-0 py-5">
+            <div class="container-fluid lh-sm fw-light px-5 mt-0">
+                <div class="row row-cols-1 text-center pt-2">
+                    <h2>Competency</h2>
+                </div>
+                <div class="row row-cols-4 g-2 py-5">
+                    {% for competency in competencys %}
+                    <div class="col">
+                        <div class="border-0 p-3 d-flex align-items-center justify-content-center">
+                            <img src="{{ competency.competency_image }}" alt="Icon" class="img-fluid competency-icon me-2">
+                            <h4 class="text-secondary mb-0">  {{ competency.competency_text }}</h4>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Add more columns here if needed -->
+                </div>
+            </div>
+        </section>
+    </article>
+    <article id="portfolio-page" class="portfolio-page">
+        <section>
+            <div class="album pt-5" data-bs-theme="dark">
+                <div class="container">
+                    <div class="row row-cols-1 text-center pb-4 offset-3">
+                        <h2 class="portfolio-text">Portfolio</h2>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pb-5">
+                        {% for portfolio in portfolios %}
+                        <div class="col">
+                            <a href="{% url 'portfolio' pk=portfolio.id %}" class="card shadow-lg stretched-link text-decoration-none">
+                              <div class="card-body d-flex flex-column justify-content-between">
+                                <img src="{{ portfolio.portfolio_image }}" class="card-img-top portfolio-card" alt="Thumbnail">
+                                <p class="card-text">{{ portfolio.portfolio_summary|truncatechars:20}}</p>
+                              </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <article id="services-page" class="services-page">
+        <section>
+            <div class="container-fluid lh-sm fw-light px-5">
+                <div class="text-center pt-5">
+                    <h2 class="services-text text-dark">Services</h2>
+                </div>
+                <div class="row row-cols-4 g-2 pt-3">
+                    {% for service in services %}
+                    <div class="col">
+                        <a href="{%  url 'services' pk=service.id %}" class="stretched-link text-decoration-none">
+                            <div class="border border-0 p-3 d-flex align-items-center justify-content-center">
+                                <img src="{{ service.service_icon }}" alt="Icon" class="img-fluid competency-icon me-2">
+                                <h4 class="text-dark mb-0 services-text">{{ service.service_text }}</h4>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                    <!-- Add more columns here if needed -->
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <section id="contact-section" class="contact-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-center mb-4">Contact Me</h2>
+                <form id="contact-form" method="POST" action="{% url 'home' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" id="send-message-btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <footer class="site-footer bg-reverse">
+        <div class="layout-social container py-5 d-flex justify-content-center">
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.twitter }}">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.facebook }}">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.Linkedin }}">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.github }}">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.tiktok }}">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.Instagram }}">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.upwork}}">
+                <svg style="color: white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"><title>Upwork</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" fill="white"></path></svg>
+            </a>
+            <a class="text-reverse px-2 footer-icon" href="{{ contact.fiverr }}">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="IconChangeColor" height="2em" width="2em"><title>Fiverr</title><path d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z" id="mainIconPathAttribute" fill="#ffffff"></path></svg>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

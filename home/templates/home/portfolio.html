@@ -1,0 +1,71 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <header class="masthead" style="background-image:url('{{ portfolio.portfolio_image.url }}')" id="about-page">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="post-heading">
+                            <h1>{{ portfolio.portfolio_summary }} </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+<!-- Post Content -->
+        <section class="port-about py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>About</h2>
+                        <p >{{ portfolio.portfolio_about|linebreaksbr  }}</p>
+                        <!-- About text -->
+                    </div>
+                    <div class="ps-2 col-md-6 d-flex justify-content-end align-items-center">
+                       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="{{ portfolio.portfolio_image.url }}" alt="Moses Sampson" class="d-block w-100">
+                            </div>
+                              {% for image in images_p %}
+                            <div class="carousel-item">
+                              <img src="{{ image.portfolio_img.url }}" alt="Moses Sampson" class="img-fluid">
+                            </div>
+                              {% endfor %}
+                            <!-- Add more carousel items as needed -->
+                              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                              </button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h4>Technologies Used:</h4>
+                        <ul class="list-group list-group-flush">
+                            {% for techs in tech %}
+                            <li class="list-group-item">
+
+                                {{ techs.portfolio_tech}}
+                            </li>
+                            {% endfor %}
+                            <!-- Add more technologies if needed -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12 text-center">
+                        <a href="{{ portfolio.portfolio_source }}" class="btn btn-primary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
