@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -154,3 +155,5 @@ EMAIL_HOST_USER = 'zetoworldlifexp@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'zetoworldlifexp@gmail.com'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
