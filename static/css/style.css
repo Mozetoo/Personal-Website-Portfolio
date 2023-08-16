@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 90vh;
     background-color: #f8f9fa;
 
 }/* Just for visualization purposes */
@@ -379,8 +380,4 @@ header.masthead .post-heading .meta a {
     header.masthead .post-heading .subheading {
         font-size: 1.875rem;
     }
-}
-.layout-text-wrapper {
-    max-height: 100px; /* Adjust the maximum height as needed */
-    overflow: hidden;
 }
