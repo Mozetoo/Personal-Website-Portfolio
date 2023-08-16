@@ -20,7 +20,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -28,10 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -77,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Personal_Website.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -92,7 +89,6 @@ WSGI_APPLICATION = 'Personal_Website.wsgi.application'
 #         'PORT': '5432'
 #     }
 # }
-
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -116,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -128,7 +123,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -137,15 +131,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-MEDIA_ROOT = ''
-MEDIA_URL = 'media/'
 
 # settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -155,5 +147,6 @@ EMAIL_HOST_USER = 'zetoworldlifexp@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'zetoworldlifexp@gmail.com'
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
