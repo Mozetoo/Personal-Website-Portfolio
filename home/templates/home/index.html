@@ -57,7 +57,7 @@
 
     </header>
     <article id="about-time" class="about-page my-0 pb-5">
-        <section class="col-sm-9 col-md-5 col-lg-12 text-center text-lg-left">
+        <section class="col-sm-12 col-md-5 col-lg-12 text-center text-lg-left">
             <div class="row align-items-center justify-content-center pt-5">
                 {% for about in abouts %}
                 <div class="col-lg-2 col-md-2 text-lg-right m-0 m-md-5">
@@ -65,9 +65,11 @@
                 </div>
                 <div class="col-lg-6 col-md-6 m-2">
                     <h2 class="layout-title pt-3">About</h2>
+                    <div class="layout-text-wrapper">
                     <p class="layout-text">
                         {{ about.about_text|linebreaksbr }}
                     </p>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
