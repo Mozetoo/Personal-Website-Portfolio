@@ -1,7 +1,13 @@
-FROM python:3.9-alpine
-LABEL maintainer = 'Personal_website'
+FROM python:3.8
 
-COPY ./requirement.txt /requirement.txt
-COPY ./home /home
+ENV PYTHONBUFFERED=1
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /django
+
+COPY requirement.txt requirement.txt
+
+RUN pip install -r requirement.txt
+
+COPY . .
+
+CMD python manage.py runserver 0.0.0.0:8000
