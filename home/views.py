@@ -9,8 +9,8 @@ def home(request):
     landing = Home.objects.all()
     about = About.objects.all()
     competency = Competency.objects.all()
-    portfolios = Portfolio.objects.exclude(id=1)  # Exclude the Portfolio with id 1  Using My DataBase
-    # portfolios = Portfolio.objects.all()
+    # portfolios = Portfolio.objects.exclude(id=1)  # Exclude the Portfolio with id 1  Using My DataBase
+    portfolios = Portfolio.objects.all()
     tech = PortfolioTech.objects.filter(portfolio__in=portfolios)
     services = Services.objects.all()
     contact = Contact.objects.get(id=1)

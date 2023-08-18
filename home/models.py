@@ -24,7 +24,7 @@ class Competency(models.Model):
     competency_text = models.CharField(max_length=50)
 
     def __str__(self):
-        return 'Competency'
+        return self.competency_text
 
 
 class Portfolio(models.Model):
@@ -34,7 +34,7 @@ class Portfolio(models.Model):
     portfolio_about = models.TextField()
 
     def __str__(self):
-        return 'Portfolio'
+        return self.portfolio_summary
 
 
 class PortfolioTech(models.Model):
@@ -56,7 +56,7 @@ class Services(models.Model):
     service_image = models.ImageField(upload_to='images/Services/', default='logo.png')
 
     def __str__(self):
-        return 'Services'
+        return self.service_text
 
 
 class ServicesText(models.Model):
