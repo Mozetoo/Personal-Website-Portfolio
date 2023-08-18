@@ -127,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
@@ -149,8 +149,8 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'zetoworldlifexp@gmail.com'
 
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_KEY')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_A_KEY')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_S_KEY')
 AWS_STORAGE_BUCKET_NAME = 'zetoworldpersonalwebsite'
 AWS_S3_SIGNATURE_NAME = 's3v4',
 AWS_S3_REGION_NAME = 'eu-north-1'
