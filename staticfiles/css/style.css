@@ -5,6 +5,9 @@
 .navbar-toggler {
     pointer-events: auto; /* Re-enable pointer events on the navbar toggler button */
 }
+#page-hero {
+     pointer-events: none;
+}
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -12,6 +15,7 @@
     justify-content: center;
     height: 90vh;
     background-color: #f8f9fa;
+    pointer-events: none;
 
 }/* Just for visualization purposes */
 
@@ -22,7 +26,7 @@
 }
 .about-page {
     background-color: yellowgreen;
-    height: 80vh;
+
 
 }
 .competency-page {
