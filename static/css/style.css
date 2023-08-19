@@ -1,13 +1,5 @@
-.navbar {
-    pointer-events: none; /* Disable pointer events on the navbar itself */
-}
 
-.navbar-toggler {
-    pointer-events: auto; /* Re-enable pointer events on the navbar toggler button */
-}
-#page-hero {
-     pointer-events: none;
-}
+
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -15,7 +7,7 @@
     justify-content: center;
     height: 90vh;
     background-color: #f8f9fa;
-    pointer-events: none;
+
 
 }/* Just for visualization purposes */
 
@@ -155,14 +147,6 @@ body {
     align-items: center;
     overflow: hidden;
     /* Optional: change the text color */
-}
-.landing-button {
-    height: 70px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 .landing-text {
